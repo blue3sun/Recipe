@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Recipe</string>
+    <!--tips-->
+    <string name="msg_waiting">"正在加载中，请稍后..."</string>
+    <string name="msg_failure">"请求失败，请稍后再试..."</string>
+    <string name="msg_empty">"内容为空..."</string>
+
+    <!--搜索菜谱-->
+    <string name="hint_input_menu">"请输入菜名"</string>
+    <string name="input_menu_empty">"请先输入菜名"</string>
+
+    <!--菜谱详情-->burden
+    <string name="recipe_detail_tip_ingredient">"食材"</string>
+    <string name="recipe_detail_tip_burden">"用料"</string>
+    <string name="recipe_detail_tip_method">"做法"</string>
+</resources>
