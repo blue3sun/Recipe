@@ -10,21 +10,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <FrameLayout
-        android:id="@id/swipe_target"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
         <ScrollView
-            android:id="@+id/scroll_view"
+            android:id="@id/swipe_target"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fillViewport="true">
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/rv_recipe_list"
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-            </android.support.v7.widget.RecyclerView>
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_recipe_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </android.support.v7.widget.RecyclerView>
+
+                <com.blue33sun.recipe.widget.Tipslayout
+                    android:id="@+id/tl_tips_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone">
+                </com.blue33sun.recipe.widget.Tipslayout>
 
             <!--<com.andview.refreshview.XRefreshView
                 android:id="@+id/xrefreshview"
@@ -40,15 +46,8 @@
                 </android.support.v7.widget.RecyclerView>
 
             </com.andview.refreshview.XRefreshView>-->
+            </FrameLayout>
         </ScrollView>
-
-        <com.blue33sun.recipe.widget.Tipslayout
-            android:id="@+id/tl_tips_layout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone">
-        </com.blue33sun.recipe.widget.Tipslayout>
-    </FrameLayout>
 
     <com.blue33sun.recipe.widget.loadmorefooter.SwipeToLoadMoreFooter
         android:id="@id/swipe_load_more_footer"

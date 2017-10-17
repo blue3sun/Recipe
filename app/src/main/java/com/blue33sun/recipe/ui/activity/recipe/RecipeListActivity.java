@@ -59,6 +59,8 @@ public class RecipeListActivity extends BaseActivity implements IRecipeListView,
     }
     private void initView() {
         mSwipeToLoadLayout = (SwipeToLoadLayout)findViewById(R.id.swipe_to_load_layout);
+        mSwipeToLoadLayout.setRefreshEnabled(true);
+        mSwipeToLoadLayout.setLoadingMore(true);
         mTlTipsLayout = (Tipslayout)findViewById(R.id.tl_tips_layout);
         mRvRecipeList = (RecyclerView)findViewById(R.id.rv_recipe_list);
 
