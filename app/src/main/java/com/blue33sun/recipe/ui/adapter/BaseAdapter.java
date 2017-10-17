@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -32,8 +33,11 @@ public abstract class BaseAdapter<T,VH extends RecyclerView.ViewHolder> extends 
     }
 
     public void addLists(List<T> lists){
+        if(this.mLists == null){
+            this.mLists = new ArrayList<>();
+        }
         this.mLists.addAll(lists);
-        setLists(mLists);
+        notifyDataSetChanged();
     }
 
 
