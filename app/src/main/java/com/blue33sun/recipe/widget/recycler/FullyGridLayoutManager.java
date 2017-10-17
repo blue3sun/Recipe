@@ -1,4 +1,4 @@
-package com.blue33sun.recipe.widget;
+package com.blue33sun.recipe.widget.recycler;
 
 import android.content.Context;
 import android.support.v7.widget.GridLayoutManager;

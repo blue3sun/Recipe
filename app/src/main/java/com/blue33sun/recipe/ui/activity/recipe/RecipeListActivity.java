@@ -7,6 +7,9 @@ import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.aspsine.swipetoloadlayout.OnLoadMoreListener;
+import com.aspsine.swipetoloadlayout.OnRefreshListener;
+import com.aspsine.swipetoloadlayout.SwipeToLoadLayout;
 import com.blue33sun.recipe.R;
 import com.blue33sun.recipe.http.callback.ErrorInfo;
 import com.blue33sun.recipe.model.category.Category;
@@ -44,6 +47,7 @@ public class RecipeListActivity extends BaseActivity implements IRecipeListView,
 //    private XRefreshView mXRefreshView;
     private boolean mIsFromSearch;//是否来自于搜索页面
     private String mSearchMenuKey;//搜索的菜谱名
+    private SwipeToLoadLayout mSwipeToLoadLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +58,7 @@ public class RecipeListActivity extends BaseActivity implements IRecipeListView,
         initData();
     }
     private void initView() {
+        mSwipeToLoadLayout = (SwipeToLoadLayout)findViewById(R.id.swipe_to_load_layout);
         mTlTipsLayout = (Tipslayout)findViewById(R.id.tl_tips_layout);
         mRvRecipeList = (RecyclerView)findViewById(R.id.rv_recipe_list);
 
@@ -75,6 +80,34 @@ public class RecipeListActivity extends BaseActivity implements IRecipeListView,
     }
 
     private void setListener() {
+        mSwipeToLoadLayout.setOnRefreshListener(new OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                if(mRecipeListPre == null){
+                    mRecipeListPre = new RecipeListPre(RecipeListActivity.this);
+                }
+                if(mIsFromSearch){
+                    mRecipeListPre.refreshRecipeListByKey(mSearchMenuKey);
+                }else{
+                    mRecipeListPre.refreshRecipeListById(mCid);
+                }
+                showWaitting();
+            }
+        });
+        mSwipeToLoadLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
+            @Override
+            public void onLoadMore() {
+                if(mRecipeListPre == null){
+                    mRecipeListPre = new RecipeListPre(RecipeListActivity.this);
+                }
+                if(mIsFromSearch){
+                    mRecipeListPre.loadMoreRecipeListByKey(mSearchMenuKey);
+                }else{
+                    mRecipeListPre.loadMoreRecipeListById(mCid);
+                }
+                showWaitting();
+            }
+        });
         mAdapter.setOnItemClickListener(this);
 //        mXRefreshView.setXRefreshViewListener(new XRefreshView.XRefreshViewListener() {
 //            @Override
@@ -131,7 +164,9 @@ public class RecipeListActivity extends BaseActivity implements IRecipeListView,
                 mCid = StringUtils.formatToInt(mCategory.getId());
             }
         }
-        mRecipeListPre = new RecipeListPre(this);
+        if(mRecipeListPre == null){
+            mRecipeListPre = new RecipeListPre(this);
+        }
         if(mIsFromSearch){
             mRecipeListPre.refreshRecipeListByKey(mSearchMenuKey);
         }else{
