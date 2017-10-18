@@ -58,14 +58,14 @@ public class RecipeListActivity extends BaseActivity implements IRecipeListView,
         initData();
     }
     private void initView() {
-        mSwipeToLoadLayout = (SwipeToLoadLayout)findViewById(R.id.swipe_to_load_layout);
+        mSwipeToLoadLayout = (SwipeToLoadLayout)findViewById(R.id.swipeToLoadLayout);
         mSwipeToLoadLayout.setRefreshEnabled(true);
         mSwipeToLoadLayout.setLoadingMore(true);
         mTlTipsLayout = (Tipslayout)findViewById(R.id.tl_tips_layout);
-        mRvRecipeList = (RecyclerView)findViewById(R.id.rv_recipe_list);
-
+        //mRvRecipeList = (RecyclerView)findViewById(R.id.rv_recipe_list);
+        mRvRecipeList = new RecyclerView(this);
         //解决ScrollView和RecyclerView滑动冲突的问题
-        mRvRecipeList.setNestedScrollingEnabled(false);
+        //mRvRecipeList.setNestedScrollingEnabled(false);
 
         LinearLayoutManager lm = new LinearLayoutManager(this);
         lm.setOrientation(OrientationHelper.VERTICAL);
@@ -195,10 +195,13 @@ public class RecipeListActivity extends BaseActivity implements IRecipeListView,
     @Override
     public void showRecipeListSuccess(boolean isRefresh, List<Recipe> lists) {
         if(isRefresh){
+            //mSwipeToLoadLayout.setRefreshing(false);
             mAdapter.setLists(lists);
         }else{
+            //mSwipeToLoadLayout.setLoadingMore(false);
             mAdapter.addLists(lists);
         }
+
         mTlTipsLayout.showSuccess();
     }
 

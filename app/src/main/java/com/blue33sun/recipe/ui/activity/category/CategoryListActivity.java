@@ -12,6 +12,7 @@ import com.blue33sun.recipe.model.category.Category;
 import com.blue33sun.recipe.model.category.MenuCategory;
 import com.blue33sun.recipe.ui.activity.BaseActivity;
 import com.blue33sun.recipe.ui.activity.recipe.RecipeListActivity;
+import com.blue33sun.recipe.ui.activity.recipe.RecipeListActivity2;
 import com.blue33sun.recipe.ui.adapter.BaseAdapter;
 import com.blue33sun.recipe.ui.adapter.category.CategoryListAdapter;
 import com.blue33sun.recipe.utils.ActivityUtils;
@@ -86,7 +87,7 @@ public class CategoryListActivity extends BaseActivity implements BaseAdapter.On
         Category category = (Category) v.getTag();
         Bundle bundle = new Bundle();
         bundle.putParcelable(RecipeListActivity.EXTRA_CATEGORY,category);
-        ActivityUtils.goToNextPage(CategoryListActivity.this,RecipeListActivity.class,bundle,false);
+        ActivityUtils.goToNextPage(CategoryListActivity.this,RecipeListActivity2.class,bundle,false);
 
     }
 }
