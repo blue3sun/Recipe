@@ -22,6 +22,7 @@
 
         <activity android:name="com.blue33sun.recipe.ui.activity.category.CategoryListActivity"/>
         <activity android:name="com.blue33sun.recipe.ui.activity.recipe.RecipeListActivity"/>
+        <activity android:name="com.blue33sun.recipe.ui.activity.recipe.RecipeListActivity2"/>
         <activity android:name="com.blue33sun.recipe.ui.activity.recipe.RecipeDetailActivity"/>
 
     </application>
