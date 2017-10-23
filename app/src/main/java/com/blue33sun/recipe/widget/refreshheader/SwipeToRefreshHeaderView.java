@@ -43,7 +43,7 @@ public class SwipeToRefreshHeaderView extends RelativeLayout implements SwipeTri
         View refreshHeaderView = layoutInflater.inflate(R.layout.layout_swipe_to_refresh_header,null);
         mPbRefresh = (ProgressBar)refreshHeaderView.findViewById(R.id.pb_refresh);
         mTvRefreshTip = (TextView)refreshHeaderView.findViewById(R.id.tv_refresh_tip);
-        LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT);
+        LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.WRAP_CONTENT);
         addView(refreshHeaderView,lp);
     }
 

@@ -43,7 +43,7 @@ public class SwipeToLoadMoreFooter extends RelativeLayout implements SwipeLoadMo
         View loadMoreFooterView = layoutInflater.inflate(R.layout.layout_swipe_to_load_more_footer,null);
         mPbLoadMore = (ProgressBar)loadMoreFooterView.findViewById(R.id.pb_load_more);
         mTvLoadMoreTip = (TextView)loadMoreFooterView.findViewById(R.id.tv_load_more_tip);
-        LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT);
+        LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.WRAP_CONTENT);
         addView(loadMoreFooterView,lp);
     }
     @Override

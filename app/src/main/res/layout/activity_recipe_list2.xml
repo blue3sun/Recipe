@@ -6,19 +6,19 @@
     android:layout_height="match_parent">
 
     <com.blue33sun.recipe.widget.refreshheader.SwipeToRefreshHeaderView
-        android:id="@id/swipe_refresh_header"
+        android:id="@+id/swipe_refresh_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
         <TextView
-            android:id="@id/swipe_target"
+            android:id="@+id/swipe_target"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="hjskkllklklkllll">
         </TextView>
 
     <com.blue33sun.recipe.widget.loadmorefooter.SwipeToLoadMoreFooter
-        android:id="@id/swipe_load_more_footer"
+        android:id="@+id/swipe_load_more_footer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 

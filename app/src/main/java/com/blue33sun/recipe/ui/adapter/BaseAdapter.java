@@ -4,6 +4,8 @@ import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.blue33sun.recipe.utils.LogUtils;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,22 +23,23 @@ public abstract class BaseAdapter<T,VH extends RecyclerView.ViewHolder> extends 
 
     public BaseAdapter(Context mContext) {
         this.mContext = mContext;
+        this.mLists = new ArrayList<>();
     }
 
     public List<T> getLists() {
         return mLists;
     }
 
-    public void setLists(List<T> mLists) {
-        this.mLists = mLists;
+    public void setLists(List<T> lists) {
+        mLists = lists;
         notifyDataSetChanged();
     }
 
     public void addLists(List<T> lists){
-        if(this.mLists == null){
-            this.mLists = new ArrayList<>();
+        if(mLists == null){
+            mLists = new ArrayList<>();
         }
-        this.mLists.addAll(lists);
+        mLists.addAll(lists);
         notifyDataSetChanged();
     }
 
@@ -44,8 +47,10 @@ public abstract class BaseAdapter<T,VH extends RecyclerView.ViewHolder> extends 
     @Override
     public int getItemCount() {
         if(mLists == null){
+            LogUtils.e("BaseAdapter  getItemCount():  mLists为null");
             return 0;
         }else{
+            LogUtils.e("BaseAdapter  getItemCount():  mLists.size()是"+mLists.size());
             return mLists.size();
         }
     }

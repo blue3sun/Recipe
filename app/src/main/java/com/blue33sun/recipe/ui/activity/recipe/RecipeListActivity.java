@@ -59,13 +59,8 @@ public class RecipeListActivity extends BaseActivity implements IRecipeListView,
     }
     private void initView() {
         mSwipeToLoadLayout = (SwipeToLoadLayout)findViewById(R.id.swipeToLoadLayout);
-        mSwipeToLoadLayout.setRefreshEnabled(true);
-        mSwipeToLoadLayout.setLoadingMore(true);
         mTlTipsLayout = (Tipslayout)findViewById(R.id.tl_tips_layout);
-        //mRvRecipeList = (RecyclerView)findViewById(R.id.rv_recipe_list);
-        mRvRecipeList = new RecyclerView(this);
-        //解决ScrollView和RecyclerView滑动冲突的问题
-        //mRvRecipeList.setNestedScrollingEnabled(false);
+        mRvRecipeList = (RecyclerView)findViewById(R.id.rv_recipe_list);
 
         LinearLayoutManager lm = new LinearLayoutManager(this);
         lm.setOrientation(OrientationHelper.VERTICAL);
@@ -73,12 +68,6 @@ public class RecipeListActivity extends BaseActivity implements IRecipeListView,
 
         mAdapter = new RecipeListAdapter(this);
         mRvRecipeList.setAdapter(mAdapter);
-
-//        mXRefreshView = (XRefreshView)findViewById(R.id.xrefreshview);
-//        mXRefreshView.setAutoRefresh(false);
-//        mXRefreshView.setAutoLoadMore(false);
-//        mXRefreshView.setPullRefreshEnable(true);
-//        mXRefreshView.setPullLoadEnable(false);
     }
 
     private void setListener() {
@@ -111,46 +100,6 @@ public class RecipeListActivity extends BaseActivity implements IRecipeListView,
             }
         });
         mAdapter.setOnItemClickListener(this);
-//        mXRefreshView.setXRefreshViewListener(new XRefreshView.XRefreshViewListener() {
-//            @Override
-//            public void onRefresh() {
-//
-//            }
-//
-//            @Override
-//            public void onRefresh(boolean isPullDown) {
-//                if (mRecipeListPre != null){
-//                    if(mIsFromSearch){
-//                        mRecipeListPre.refreshRecipeListByKey(mSearchMenuKey);
-//                    }else{
-//                        mRecipeListPre.refreshRecipeListById(mCid);
-//                    }
-//                    showWaitting();
-//                }
-//            }
-//
-//            @Override
-//            public void onLoadMore(boolean isSilence) {
-//                if (mRecipeListPre != null){
-//                    if(mIsFromSearch){
-//                        mRecipeListPre.loadMoreRecipeListByKey(mSearchMenuKey);
-//                    }else{
-//                        mRecipeListPre.loadMoreRecipeListById(mCid);
-//                    }
-//                    showWaitting();
-//                }
-//            }
-//
-//            @Override
-//            public void onRelease(float direction) {
-//
-//            }
-//
-//            @Override
-//            public void onHeaderMove(double headerMovePercent, int offsetY) {
-//
-//            }
-//        });
     }
 
     private void initData() {
@@ -195,10 +144,10 @@ public class RecipeListActivity extends BaseActivity implements IRecipeListView,
     @Override
     public void showRecipeListSuccess(boolean isRefresh, List<Recipe> lists) {
         if(isRefresh){
-            //mSwipeToLoadLayout.setRefreshing(false);
+            mSwipeToLoadLayout.setRefreshing(false);
             mAdapter.setLists(lists);
         }else{
-            //mSwipeToLoadLayout.setLoadingMore(false);
+            mSwipeToLoadLayout.setLoadingMore(false);
             mAdapter.addLists(lists);
         }
 
@@ -207,7 +156,11 @@ public class RecipeListActivity extends BaseActivity implements IRecipeListView,
 
     @Override
     public void canLoadMore(boolean isCanLoadMore) {
-//        mXRefreshView.setPullLoadEnable(isCanLoadMore);
+        if(isCanLoadMore){
+            mSwipeToLoadLayout.setLoadMoreEnabled(true);
+        }else{
+            mSwipeToLoadLayout.setLoadMoreEnabled(false);
+        }
     }
 
     @Override
