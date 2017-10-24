@@ -3,7 +3,6 @@ package com.blue33sun.recipe.ui.activity.category;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
@@ -45,24 +44,16 @@ public class CategoryListActivity extends BaseActivity implements BaseAdapter.On
         initData();
     }
     private void initView() {
-//        mXRefreshView = (XRefreshView)findViewById(R.id.xrefreshview);
         mTlTipsLayout = (Tipslayout)findViewById(R.id.tl_tips_layout);
         mRvCategoryList = (RecyclerView)findViewById(R.id.rv_category_list);
-        //解决ScrollView和RecyclerView滑动冲突的问题
-        mRvCategoryList.setNestedScrollingEnabled(false);
 
         //FullyGridLayoutManager lm = new FullyGridLayoutManager(this,3);
         GridLayoutManager lm = new GridLayoutManager(this,3);
-        lm.setOrientation(OrientationHelper.VERTICAL);
+        lm.setOrientation(GridLayoutManager.VERTICAL);
         mRvCategoryList.setLayoutManager(lm);
 
         mAdapter = new CategoryListAdapter(this);
         mRvCategoryList.setAdapter(mAdapter);
-
-//        mXRefreshView.setAutoRefresh(false);
-//        mXRefreshView.setAutoLoadMore(false);
-//        mXRefreshView.setPullRefreshEnable(true);
-//        mXRefreshView.setPullLoadEnable(false);
     }
 
     private void setListener() {

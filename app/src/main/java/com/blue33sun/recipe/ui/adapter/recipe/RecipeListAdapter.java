@@ -13,6 +13,7 @@ import com.blue33sun.recipe.model.recipe.Recipe;
 import com.blue33sun.recipe.ui.adapter.BaseAdapter;
 import com.blue33sun.recipe.utils.DisplayUtils;
 import com.blue33sun.recipe.utils.ImageUtils;
+import com.blue33sun.recipe.utils.LogUtils;
 import com.facebook.drawee.view.SimpleDraweeView;
 
 /**
@@ -37,6 +38,7 @@ public class RecipeListAdapter extends BaseAdapter<Recipe,RecipeListAdapter.Reci
 
     @Override
     public void onBindViewHolder(RecipeListViewHolder holder, int position) {
+        LogUtils.e("BaseAdapter  onBindViewHolder():  position:"+position);
         if (mLists == null || position >= mLists.size() || position < 0){
             holder.itemView.setVisibility(View.GONE);
             return;

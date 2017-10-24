@@ -3,7 +3,6 @@ package com.blue33sun.recipe.ui.activity.recipe;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
@@ -44,7 +43,6 @@ public class RecipeListActivity extends BaseActivity implements IRecipeListView,
     private Category mCategory;
     private int mCid;//标签id
     private RecipeListPre mRecipeListPre;
-//    private XRefreshView mXRefreshView;
     private boolean mIsFromSearch;//是否来自于搜索页面
     private String mSearchMenuKey;//搜索的菜谱名
     private SwipeToLoadLayout mSwipeToLoadLayout;
@@ -60,10 +58,10 @@ public class RecipeListActivity extends BaseActivity implements IRecipeListView,
     private void initView() {
         mSwipeToLoadLayout = (SwipeToLoadLayout)findViewById(R.id.swipeToLoadLayout);
         mTlTipsLayout = (Tipslayout)findViewById(R.id.tl_tips_layout);
-        mRvRecipeList = (RecyclerView)findViewById(R.id.rv_recipe_list);
+        mRvRecipeList = (RecyclerView)findViewById(R.id.swipe_target);
 
         LinearLayoutManager lm = new LinearLayoutManager(this);
-        lm.setOrientation(OrientationHelper.VERTICAL);
+        lm.setOrientation(LinearLayoutManager.VERTICAL);
         mRvRecipeList.setLayoutManager(lm);
 
         mAdapter = new RecipeListAdapter(this);

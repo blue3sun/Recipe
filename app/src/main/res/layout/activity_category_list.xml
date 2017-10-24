@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:xrefreshview="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <ScrollView
@@ -15,21 +14,6 @@
             android:layout_height="wrap_content"
             android:padding="@dimen/dimen_8">
         </android.support.v7.widget.RecyclerView>
-
-        <!--<com.andview.refreshview.XRefreshView
-            android:id="@+id/xrefreshview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            xrefreshview:autoRefresh="false" >
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/rv_category_list"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/dimen_16">
-            </android.support.v7.widget.RecyclerView>
-
-        </com.andview.refreshview.XRefreshView>-->
     </ScrollView>
 
     <com.blue33sun.recipe.widget.Tipslayout
@@ -38,7 +22,4 @@
         android:layout_height="match_parent"
         android:visibility="gone">
     </com.blue33sun.recipe.widget.Tipslayout>
-
-
-
 </RelativeLayout>
