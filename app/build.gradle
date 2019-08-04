@@ -34,7 +34,7 @@ dependencies {
     compile 'com.huxq17.xrefreshview:xrefreshview:3.6.9'
     compile 'com.android.support:design:25.0.1'
     compile 'com.facebook.fresco:fresco:1.5.0'
-    compile 'com.github.Aspsine:SwipeToLoadLayout:v1.0.2'
+//    compile 'com.github.Aspsine:SwipeToLoadLayout:v1.0.2'
 //    compile 'com.hkm.slidingmenulib:libmenu:0.4.9'
 //    compile 'com.wuxiaolong.pullloadmorerecyclerview:library:1.0.4'
 }
