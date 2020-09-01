@@ -52,3 +52,7 @@ freeline.py
 freeline/
 freeline_project_description.json
 
+/gradle/wrapper/gradle-wrapper.jar
+/gradle/wrapper/gradle-wrapper.properties
+/gradlew
+/gradlew.bat
