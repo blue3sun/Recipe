@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:bind="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="recipe"
+            type="com.blue33sun.recipe.model.recipe.Recipe" />
+    </data>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:fresco="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen_8">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/sdw_album"
+            android:layout_width="@dimen/dimen_80"
+            android:layout_height="@dimen/dimen_80"
+            fresco:actualImageScaleType="centerCrop"
+            fresco:placeholderImage="@mipmap/ic_launcher"
+            fresco:placeholderImageScaleType="centerCrop"
+            fresco:retryImageScaleType="centerCrop"
+            fresco:progressBarImage="@mipmap/ic_tips_progressbar"
+            fresco:progressBarImageScaleType="centerInside"
+            fresco:progressBarAutoRotateInterval="3000"
+            fresco:failureImage="@mipmap/ic_tips_failure"
+            fresco:failureImageScaleType="centerCrop"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            bind:imageUrl='@{recipe.albums==null?"":recipe.albums[0]}'/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/sdw_album"
+            android:layout_marginLeft="@dimen/dimen_4"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/txt_size_20"
+                android:textStyle="bold"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{recipe.title}"/>
+
+            <TextView
+                android:id="@+id/tv_tags"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/txt_size_12"
+                android:maxLines="2"
+                android:lineSpacingExtra="@dimen/dimen_2"
+                android:ellipsize="end"
+                android:text="@{recipe.tags}"/>
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+</layout>

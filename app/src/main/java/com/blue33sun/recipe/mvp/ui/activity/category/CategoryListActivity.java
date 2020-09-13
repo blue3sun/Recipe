@@ -1,4 +1,4 @@
-package com.blue33sun.recipe.ui.activity.category;
+package com.blue33sun.recipe.mvp.ui.activity.category;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,10 +9,10 @@ import android.view.View;
 import com.blue33sun.recipe.R;
 import com.blue33sun.recipe.model.category.Category;
 import com.blue33sun.recipe.model.category.MenuCategory;
-import com.blue33sun.recipe.ui.activity.BaseActivity;
-import com.blue33sun.recipe.ui.activity.recipe.RecipeListActivity;
-import com.blue33sun.recipe.ui.adapter.BaseAdapter;
-import com.blue33sun.recipe.ui.adapter.category.CategoryListAdapter;
+import com.blue33sun.recipe.mvp.ui.activity.BaseActivity;
+import com.blue33sun.recipe.mvp.ui.activity.recipe.RecipeListActivity;
+import com.blue33sun.recipe.mvp.ui.adapter.BaseAdapter;
+import com.blue33sun.recipe.mvp.ui.adapter.category.CategoryListAdapter;
 import com.blue33sun.recipe.utils.ActivityUtils;
 import com.blue33sun.recipe.widget.Tipslayout;
 

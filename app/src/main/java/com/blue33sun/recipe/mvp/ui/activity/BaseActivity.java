@@ -1,4 +1,4 @@
-package com.blue33sun.recipe.ui.activity;
+package com.blue33sun.recipe.mvp.ui.activity;
 
 import android.support.v7.app.AppCompatActivity;
 
@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
  * Author:lanjing
  * Date:2017/10/3 15:27
  */
-
 public class BaseActivity extends AppCompatActivity{
 
 

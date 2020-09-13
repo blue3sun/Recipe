@@ -1,4 +1,4 @@
-package com.blue33sun.recipe.ui.adapter.recipe;
+package com.blue33sun.recipe.mvp.ui.adapter.recipe;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.blue33sun.recipe.R;
 import com.blue33sun.recipe.model.recipe.Material;
-import com.blue33sun.recipe.ui.adapter.BaseAdapter;
+import com.blue33sun.recipe.mvp.ui.adapter.BaseAdapter;
 import com.blue33sun.recipe.utils.DisplayUtils;
 
 /**

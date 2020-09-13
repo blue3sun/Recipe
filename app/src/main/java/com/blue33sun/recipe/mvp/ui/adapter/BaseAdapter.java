@@ -1,4 +1,4 @@
-package com.blue33sun.recipe.ui.adapter;
+package com.blue33sun.recipe.mvp.ui.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;

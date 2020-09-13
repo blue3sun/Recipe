@@ -1,4 +1,4 @@
-package com.blue33sun.recipe.presenter;
+package com.blue33sun.recipe.mvp.presenter;
 
 /**
  * ClassName:Ipresenter

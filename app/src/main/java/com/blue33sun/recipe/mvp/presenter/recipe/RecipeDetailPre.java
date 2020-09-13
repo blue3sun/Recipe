@@ -1,10 +1,10 @@
-package com.blue33sun.recipe.presenter.recipe;
+package com.blue33sun.recipe.mvp.presenter.recipe;
 
 import com.blue33sun.recipe.http.callback.ErrorInfo;
 import com.blue33sun.recipe.http.manager.DataManager;
 import com.blue33sun.recipe.model.recipe.Recipe;
 import com.blue33sun.recipe.model.recipe.RecipeData;
-import com.blue33sun.recipe.presenter.Ipresenter;
+import com.blue33sun.recipe.mvp.presenter.Ipresenter;
 import com.blue33sun.recipe.utils.HttpUtils;
 import com.blue33sun.recipe.utils.StringUtils;
 import com.blue33sun.recipe.view.recipe.IRecipeDetailView;

@@ -1,4 +1,4 @@
-package com.blue33sun.recipe.ui.activity.recipe;
+package com.blue33sun.recipe.mvp.ui.activity.recipe;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,10 +13,10 @@ import com.blue33sun.recipe.R;
 import com.blue33sun.recipe.http.callback.ErrorInfo;
 import com.blue33sun.recipe.model.category.Category;
 import com.blue33sun.recipe.model.recipe.Recipe;
-import com.blue33sun.recipe.presenter.recipe.RecipeListPre;
-import com.blue33sun.recipe.ui.activity.BaseActivity;
-import com.blue33sun.recipe.ui.adapter.BaseAdapter;
-import com.blue33sun.recipe.ui.adapter.recipe.RecipeListAdapter;
+import com.blue33sun.recipe.mvp.presenter.recipe.RecipeListPre;
+import com.blue33sun.recipe.mvp.ui.activity.BaseActivity;
+import com.blue33sun.recipe.mvp.ui.adapter.BaseAdapter;
+import com.blue33sun.recipe.mvp.ui.adapter.recipe.RecipeListAdapter;
 import com.blue33sun.recipe.utils.ActivityUtils;
 import com.blue33sun.recipe.utils.DisplayUtils;
 import com.blue33sun.recipe.utils.StringUtils;
@@ -148,7 +148,6 @@ public class RecipeListActivity extends BaseActivity implements IRecipeListView,
             mSwipeToLoadLayout.setLoadingMore(false);
             mAdapter.addLists(lists);
         }
-
         mTlTipsLayout.showSuccess();
     }
 

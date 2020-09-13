@@ -1,10 +1,10 @@
-package com.blue33sun.recipe.presenter.category;
+package com.blue33sun.recipe.mvp.presenter.category;
 
 import com.blue33sun.recipe.http.callback.ErrorInfo;
 import com.blue33sun.recipe.http.manager.DataManager;
 import com.blue33sun.recipe.model.category.MenuCategories;
 import com.blue33sun.recipe.model.category.MenuCategory;
-import com.blue33sun.recipe.presenter.Ipresenter;
+import com.blue33sun.recipe.mvp.presenter.Ipresenter;
 import com.blue33sun.recipe.utils.HttpUtils;
 import com.blue33sun.recipe.utils.StringUtils;
 import com.blue33sun.recipe.view.category.IMenuCategoryView;

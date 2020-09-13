@@ -1,4 +1,4 @@
-package com.blue33sun.recipe.ui.activity.recipe;
+package com.blue33sun.recipe.mvp.ui.activity.recipe;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -12,10 +12,10 @@ import com.blue33sun.recipe.R;
 import com.blue33sun.recipe.http.callback.ErrorInfo;
 import com.blue33sun.recipe.model.recipe.Material;
 import com.blue33sun.recipe.model.recipe.Recipe;
-import com.blue33sun.recipe.presenter.recipe.RecipeDetailPre;
-import com.blue33sun.recipe.ui.activity.BaseActivity;
-import com.blue33sun.recipe.ui.adapter.recipe.RecipeDetailMaterialAdapter;
-import com.blue33sun.recipe.ui.adapter.recipe.RecipeDetailStepAdapter;
+import com.blue33sun.recipe.mvp.presenter.recipe.RecipeDetailPre;
+import com.blue33sun.recipe.mvp.ui.activity.BaseActivity;
+import com.blue33sun.recipe.mvp.ui.adapter.recipe.RecipeDetailMaterialAdapter;
+import com.blue33sun.recipe.mvp.ui.adapter.recipe.RecipeDetailStepAdapter;
 import com.blue33sun.recipe.utils.DisplayUtils;
 import com.blue33sun.recipe.utils.ImageUtils;
 import com.blue33sun.recipe.utils.StringUtils;

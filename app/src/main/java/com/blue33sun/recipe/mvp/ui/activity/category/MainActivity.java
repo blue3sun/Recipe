@@ -1,4 +1,4 @@
-package com.blue33sun.recipe.ui.activity.category;
+package com.blue33sun.recipe.mvp.ui.activity.category;
 
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -11,11 +11,11 @@ import android.widget.ImageView;
 import com.blue33sun.recipe.R;
 import com.blue33sun.recipe.http.callback.ErrorInfo;
 import com.blue33sun.recipe.model.category.MenuCategory;
-import com.blue33sun.recipe.presenter.category.MenuCategoryPre;
-import com.blue33sun.recipe.ui.activity.BaseActivity;
-import com.blue33sun.recipe.ui.activity.recipe.RecipeListActivity;
-import com.blue33sun.recipe.ui.adapter.BaseAdapter;
-import com.blue33sun.recipe.ui.adapter.category.MenuCategoryAdapter;
+import com.blue33sun.recipe.mvp.presenter.category.MenuCategoryPre;
+import com.blue33sun.recipe.mvp.ui.activity.BaseActivity;
+import com.blue33sun.recipe.mvp.ui.activity.recipe.RecipeListActivity;
+import com.blue33sun.recipe.mvp.ui.adapter.BaseAdapter;
+import com.blue33sun.recipe.mvp.ui.adapter.category.MenuCategoryAdapter;
 import com.blue33sun.recipe.utils.ActivityUtils;
 import com.blue33sun.recipe.utils.DisplayUtils;
 import com.blue33sun.recipe.utils.StringUtils;

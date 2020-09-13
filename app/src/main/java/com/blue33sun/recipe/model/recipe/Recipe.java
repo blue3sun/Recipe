@@ -13,14 +13,14 @@ import java.util.List;
  */
 
 public class Recipe implements Parcelable {
-    private String id;
-    private String title;
-    private String tags;
-    private String imtro;
-    private String ingredients;//eg："鲈鱼,1个;柠檬,2个;红椒,6个"
-    private String burden;//eg:"大蒜头,适量;香菜,适量;盐,适量;生姜,适量"
-    private List<String> albums;
-    private List<Step> steps;
+    public String id;
+    public String title;
+    public String tags;
+    public String imtro;
+    public String ingredients;//eg："鲈鱼,1个;柠檬,2个;红椒,6个"
+    public String burden;//eg:"大蒜头,适量;香菜,适量;盐,适量;生姜,适量"
+    public List<String> albums;
+    public List<Step> steps;
 
     public String getId() {
         return id;

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.aspsine.swipetoloadlayout.SwipeToLoadLayout
+            android:id="@+id/swipeToLoadLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.blue33sun.recipe.widget.refreshheader.SwipeToRefreshHeaderView
+                android:id="@+id/swipe_refresh_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <!--不能把RecyclerView放在FrameLayout里面，不然RecyclerView显示不出来，有问题-->
+            <!--<FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </FrameLayout>-->
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/swipe_target"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </android.support.v7.widget.RecyclerView>
+
+            <com.blue33sun.recipe.widget.loadmorefooter.SwipeToLoadMoreFooter
+                android:id="@+id/swipe_load_more_footer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.aspsine.swipetoloadlayout.SwipeToLoadLayout>
+        <com.blue33sun.recipe.widget.Tipslayout
+            android:id="@+id/tl_tips_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+        </com.blue33sun.recipe.widget.Tipslayout>
+    </FrameLayout>
+</layout>
